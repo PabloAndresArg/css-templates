@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    /* border-box: clientWidth = width-padding-border */
+    /* EXPLICACION DEL BOX-SIZING: https://youtu.be/Vx854s9YE78 */
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+nav{
+    position:fixed; /* el efecto que logra es que este mostrandose siempre en toda la pantalla */
+    /* The box's position is calculated according to the 
+    'absolute' model, but in addition, the box is fixed 
+    with respect to some reference. As with the 'absolute' model,
+     the box's margins do not collapse with any other margins. */
+
+    top: 20px;
+    left: 20px;
+}
+
+nav a {
+    color:#ffff;
+    text-decoration: none;
+    display: inline-block;
+    /* es necesario el inline-block para hacer el efecto como que desaparece hacia la izquierda, sino no se va mover */
+    animation: moverIzquierda 1s ease-in; 
+    /* tiene que tener el nombre del keyframe */
+}
+
+header{
+    background: #ff4b1f;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ff9068, #ff4b1f);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ff9068, #ff4b1f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: auto;
+    padding: 48px;
+    width: 100%;
+}
+img{
+    display: block;
+    height: 450px;
+    object-fit: cover;
+    /* La propiedad CSS object-fit indica cómo el contenido de 
+    un elemento reemplazado, por ejemplo un <img> o <video> , 
+    debería redimensionarse para ajustarse a su contenedor */
+    width: auto;
+    animation: arriba 1s ease-in; 
+
+}
+
+.container{
+    width: 95%;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;
+}
+
+.textos{
+    width: 50%;
+    color: #ffff;
+}
+
+.textos h1{
+    font-size: 80px;
+    animation: moverDer 1s ease-in; 
+
+}
+.textos h2{
+    font-size: 30px;
+    animation: moverIzquierda 1s ease-in; 
+
+}
+.textos a{
+    display: inline-block;
+    color: #ffff;
+    font-weight: 300;
+    text-decoration: none; /* le quita el subrayado de abajo */
+    margin-top: 30px;
+    border: 1px solid #ffff;
+    width: 150px;
+    border-radius: 3px;
+    text-align: center;
+    padding: 10px 0;
+    animation: arriba 1s ease-in; 
+
+}
+
+.wave{
+    height: 100px;
+    width: 100%;
+    background: #ff4b1f;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ff9068, #ff4b1f);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ff9068, #ff4b1f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+/* ANIMACIONES */
+
+@keyframes moverIzquierda{
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moverDer{
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes arriba{
+    0%{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
