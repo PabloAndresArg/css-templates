@@ -1,0 +1,81 @@
+
+.card{
+    position: relative;
+    width:  300px;
+    height: 350px;
+    color: #a18a96;
+    border-radius: 20px;
+    margin: 10px;
+    overflow:  hidden;
+}
+
+.image1{
+    background: url("./champions.jpg") center no-repeat;
+    background-size: cover;
+}
+.image2{
+    background: url("./final.jpg") center no-repeat;
+    background-size: cover;
+}
+
+
+.container{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.card__content{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #ffff;
+    border-top-color: 20px;
+    transform: translateY(70px);
+    transition: transform .25s;
+}
+
+.card__content::before{
+    content: '';
+    position: absolute;
+    /* coloca un elemento relativo a la posición de su padre */
+    top: -47px;
+    right: -45px;
+    width: 100px;
+    height: 100px;
+    transform: rotate(-175deg);
+    border-radius: 50%;
+    box-shadow:  inset 48px 48px #ffff;
+}
+
+.space{
+    padding-inline-start: 20px;
+    padding-inline-end: 20px;
+}
+.card__title{
+    color: #6A525E;
+    line-height: 15px;
+}
+
+.card__subtitle{
+    display: block;
+    font-size: 12px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+.card__description {
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity .5s;
+    width: 38ch;
+    font-weight: 300;
+}
+
+.card:hover .card__content{
+    transform: translateY(0);
+}
+
+.card:hover .card__description{
+    opacity: 1;
+    transition-delay: .25s;
+}
