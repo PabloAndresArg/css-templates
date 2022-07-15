@@ -265,6 +265,9 @@ hr {
 
 
 @media (max-width: 700px) {
+  .menu-btn{
+    display: block;
+  }
 
   /* BARRA LATERAL PARA LA VERSION MOBILE */
   .menu-btn {
@@ -289,6 +292,7 @@ hr {
     /* transform: translateX(-30px); */
     transform: translateX(-500px);
     transition: transform 0.5s ease-in-out;
+    border-bottom-right-radius: 30px;
   }
 
 
