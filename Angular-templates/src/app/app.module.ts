@@ -16,6 +16,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { PagesComponent } from './pages/pages.component';
 import { LoginComponent } from './pages/login/login.component';
 import { MaterialModule } from './material/material.module';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { MaterialModule } from './material/material.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FormsModule
+    FormsModule, InfiniteScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent]

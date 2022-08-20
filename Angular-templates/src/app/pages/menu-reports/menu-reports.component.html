@@ -1,9 +1,8 @@
-
-
-    <section class="container-reports">
+    <section class="container-reports" infinite-scroll [infiniteScrollDistance]="scrollDistance"
+        [infiniteScrollThrottle]="modalScrollThrottle" infinite-scroll (scrolled)="onModalScrollDown($event)">
         <div class="item-report animate__animated animate__bounceIn" *ngFor="let rep of reports">
             <div class="text-report">
-                <h1 class="title-h1">titulo reporte</h1>
+                <h1 class="title-h1">{{rep.titulo}}</h1>
 
                 <p class="text-p">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, quisquam perferendis eaque accusamus
@@ -19,5 +18,7 @@
                     alt="">
             </div>
         </div>
+   
 
-    </section>
+
+</section>

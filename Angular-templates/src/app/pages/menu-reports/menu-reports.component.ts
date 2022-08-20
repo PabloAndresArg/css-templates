@@ -56,8 +56,31 @@ export class MenuReportsComponent implements OnInit {
     },
   ];
 
+  scrollDistance = 1;
+  modalScrollThrottle = 50;
+  addNewItem(){
+    this.reports.push({
+      titulo: "scroll Report",
+      descripcion: "",
+      imagen: ""
+    });
+  }
+
+  add20(){
+    for (let i = 0; i < 20; i++) {
+      this.addNewItem();
+    }
+  }
+
   constructor(private activatedroute: ActivatedRoute, private utils: UtilsService) {
 
+  }
+
+  onModalScrollDown(ev:any) {
+    console.log("scrolled down!!", ev);
+    // add another 20 items
+    this.add20();
+    console.log("limite de scroll");
   }
 
   ngOnInit(): void {
