@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, Validators, FormGroup } from "@angular/forms";
+import swal from 'sweetalert2';
 
 @Component({
   selector: "app-login",
@@ -29,5 +30,16 @@ export class LoginComponent implements OnInit {
 
     console.log(this.loginForm.get('username')?.value);
     console.log(this.loginForm.get('password')?.value);
+    swal.fire(
+      {
+        title: "",
+        icon: "info",
+        color: "#0d6efd",
+        html: "<h1> Bienvenido..!</h1>",
+        confirmButtonColor: "#0d6efd",
+        focusConfirm: true
+      }
+
+      );
   }
 }
