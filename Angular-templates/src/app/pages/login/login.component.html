@@ -2,26 +2,32 @@
     <div class="FondoCompleto">
         <div class="card tamanioLogin animate__animated animate__bounceIn">
             <div class="card-body">
-                <form #formulario="ngForm" (ngSubmit)="onSubmit()">
+                <form  [formGroup]="loginForm" (ngSubmit)="onSubmit()" autocomplete="off">
                     <img [src]="'assets/conap.jpeg'"><img>
                     <mat-form-field class="example-full-width" appearance="fill">
                         <mat-label>
                             <mat-icon aria-hidden="false" aria-label="Example home icon">account_circle</mat-icon> Username
                         </mat-label>
-                        <input matInput name="userName">
+                        <input matInput 
+                        formControlName="username"
+                        name="userName"
+                        >
                     </mat-form-field>
                     <br>
                     <mat-form-field class="example-full-width" appearance="fill">
                         <mat-label>
                             <mat-icon aria-hidden="false" aria-label="Example home icon">fingerprint</mat-icon> Password
                         </mat-label>
-                        <input matInput type="password" name="password" >
+                        <input matInput type="password" name="password" formControlName="password">
                     </mat-form-field>
-    
-                    <button type="submit" class="btn btn-primary aling-center" style="width: 100%;">Login</button>
-                    <!-- <p class="registro">
-                        Not registered? <a [routerLink]="['/signup']">Sign Up</a>
-                    </p> -->
+
+
+                    <button type="submit" class="btn btn-primary aling-center" style="width: 100%;"
+                    [disabled] = "this.loginForm.invalid"
+                    >Login</button>
+                        <p class="registro">
+                            Not registered? <a [routerLink]="['/signup']">Sign Up</a>
+                        </p>     
                 </form>
             </div>
         </div>
